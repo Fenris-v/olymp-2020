@@ -1,0 +1,605 @@
+@import "variables"
+@import "prefixes"
+/* RESET */
+@import "normalize"
+
+.wrapper
+  margin: 0 auto
+  max-width: 1740px
+  padding: 0 20px
+  width: 100%
+  overflow: hidden
+
+  &_fullHD
+    overflow: hidden
+    margin: 0 auto
+    width: 100%
+    max-width: 1920px
+
+  &.wrapper_noPadding
+    padding: 0
+
+.btn
+  display: inline-block
+  text-transform: uppercase
+  @include font($white, $regular, 400, 14px, 50px)
+  padding: 0 60px
+  text-decoration: none
+
+  &_red
+    background: $red
+    @include transition()
+
+  &_grey
+    background: $lightGrey
+    @include transition()
+    color: $red
+
+    &:hover
+      opacity: 0.8
+      @include transition()
+
+.innerTitle
+  @include font($textBlack, $regular, 400, 40px)
+  margin-bottom: 50px
+  margin-top: 0
+
+.readMore
+  @include font($red, $regular, 400, 15px)
+  margin-bottom: 60px
+  border-bottom: 1px solid $red
+  text-decoration: none
+  display: inline-block
+
+.header
+  position: relative
+  z-index: 1
+  background: $grey
+  display: flex
+  padding: 15px 20px
+  justify-content: space-between
+
+  &__logo
+    display: flex
+    align-items: center
+
+    &_first
+      a
+        border-right: 1px solid $white
+        padding-right: 20px
+
+    a
+      width: 70px
+      display: block
+      margin-right: 20px
+
+    &_second
+      div
+        @include font($white, $regular, normal, 18px, 1.2)
+
+      img
+        max-width: 100%
+
+    div
+      max-width: 200px
+      @include font($white, $regular, normal, 16px, 1.2)
+
+  &__nav
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-right: 50px
+
+    &__items
+      display: flex
+      justify-content: center
+      align-items: center
+      list-style: none
+      margin: 0
+      padding: 0
+
+      li
+        padding: 0 15px
+
+      a
+        @include font($white, $regular, normal, 15px, 1.2)
+        border-bottom: 1px solid #787878
+        text-decoration: none
+
+  .languageChooseWrapper
+    display: flex
+    margin-right: 15px
+
+  .nextLengWrapper
+    display: none
+
+  .languageChoose
+    display: flex
+    align-items: center
+    justify-content: center
+
+  &__login
+    display: flex
+    width: 220px
+    background: $red
+    justify-content: center
+    align-items: center
+    margin: -15px -20px -15px 0
+
+    img
+      width: 50px
+      margin-right: 20px
+
+    a
+      @include font($white, $regular, normal, 18px, 1.2)
+      text-decoration: none
+
+      span
+        border-bottom: 1px solid #787878
+
+.s_firstScreen
+  .wrapper_fullHD
+    position: relative
+    z-index: 0
+    margin-top: -140px
+
+    img
+      position: absolute
+      z-index: 0
+      top: 0
+      bottom: 0
+      @include object-fit()
+      height: 100%
+
+  .wrapper
+    margin-top: 140px
+    position: relative
+    z-index: 1
+
+.firstScreen
+  padding-bottom: 90px
+  display: flex
+
+  &_left
+    width: 630px
+
+  h1
+    @include font($textBlack, $regular, normal, 64px, 1.2)
+    padding-top: 90px
+    margin: 0 0 70px
+
+    span
+      color: $red
+      font-weight: 600
+
+  p
+    @include font($textBlack, $light, 300, 24px, 1.2)
+    margin: 0 0 65px
+
+  &_right
+    &__item
+      padding: 30px
+      display: inline-block
+
+      img.firstScreen_right__icon
+        height: 80px
+        margin-bottom: 30px
+        position: static
+
+      .age
+        @include font($white, $bold, 700, 45px, 1)
+        margin-bottom: 25px
+
+      p
+        @include font($white, $regular, 400, 18px, 1)
+        white-space: nowrap
+        margin: 0
+
+      &:first-child
+        background: $grey
+        margin: 30px 0 30px 170px
+
+      &:last-child
+        background: $red
+        margin: 0 0 0 170px
+        @include transform(translateX(-50%))
+
+.s_friends
+  margin-bottom: 70px
+
+.friends
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+
+  &_half
+    width: 50%
+
+    img
+      @include object-fit(cover)
+      width: 100%
+      height: 100%
+      min-height: 700px
+
+    &:last-child
+      padding: 100px 0 0 100px
+
+  &__rules
+    position: relative
+    display: flex
+    margin-bottom: 60px
+
+    &__link
+      position: absolute
+      right: 0
+      bottom: 0
+      -webkit-backdrop-filter: blur(10px)
+      backdrop-filter: blur(10px)
+      background-color: rgba(172, 55, 55, 0.5)
+      display: flex
+      height: 130px
+      align-items: center
+      padding: 0 20px
+      width: 340px
+
+      img
+        width: 70px
+        margin-right: 30px
+        @include object-fit(contain)
+
+      a
+        @include font($white, $regular, 400, 24px, 1.3)
+
+  &__events
+    display: flex
+    justify-content: space-between
+
+  &__event
+    width: 32%
+
+    p
+      height: 120px
+      overflow: hidden
+      margin-bottom: 25px
+      @include font($textBlack, $regular, 400, 18px, 1.2)
+
+    &__date
+      margin-bottom: 30px
+
+    .btn
+      padding: 0 25px
+
+  &__text
+    max-height: 295px
+    overflow: hidden
+
+
+  &__copyright
+    margin-bottom: 100px
+    max-width: 530px
+    opacity: 0.8
+    @include font($textBlack, $regular, 400, 18px, 1.3)
+
+.s_steps
+  margin-bottom: 100px
+
+.steps
+  display: flex
+  justify-content: space-between
+
+  &__item
+    width: 24%
+
+    &__blur
+      padding: 70px 20px
+      display: flex
+      width: 100%
+      @include box-sizing()
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      background: rgba(92, 92, 92, 0.5)
+
+    &__name
+      @include font($white, $regular, 400, 42px)
+      margin-bottom: 30px
+
+    &__date
+      @include font($white, $regular, 400, 18px)
+      padding: 15px 25px
+      max-width: 200px
+      text-align: center
+      background: $lightGrey
+      background-size: cover
+
+    &:nth-child(1)
+      background: url("../images/step1.jpeg") center center no-repeat
+
+    &:nth-child(2)
+      background: url("../images/step1.jpeg") center center no-repeat
+
+    &:nth-child(3)
+      background: url("../images/step1.jpeg") center center no-repeat
+
+    &:nth-child(4)
+      background: $red
+
+      .steps__item__blur
+        background: none
+
+.s_tasks
+  margin-bottom: 100px
+
+.tasks
+  display: flex
+  justify-content: space-between
+
+  &_top
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    background: $grey
+    padding: 40px
+    @include font($white, $regular, 400, 18px)
+    margin-bottom: 50px
+
+    img
+      margin-right: 40px
+
+  &_half
+    width: 48%
+
+    img
+      width: 100%
+      @include object-fit()
+      margin-bottom: 45px
+
+    &:last-child
+      img
+        margin-bottom: 70px
+
+  &_second
+    background: $grey
+    padding: 60px
+    margin-bottom: 50px
+
+    .innerTitle
+      color: $white
+      max-width: 500px
+      line-height: 1.3
+
+    p
+      margin-bottom: 30px
+      @include font($white, $regular, normal, 16px, 1.5)
+
+      &:last-child
+        margin-bottom: 0
+
+  &__org
+    &__title
+      margin-bottom: 50px
+      @include font($textBlack, $regular, normal, 30px, 1.5)
+
+    &__items
+      display: flex
+      justify-content: space-between
+
+    &__item
+      width: 49%
+      display: flex
+      align-items: center
+      background: $lightGrey
+      padding: 20px 40px
+      @include box-sizing()
+
+      img
+        width: 70px
+        margin-bottom: 0
+        margin-right: 40px
+
+      p
+        @include font($textBlack, $regular, 400, 18px)
+
+  &_first
+    .innerTitle
+      max-width: 500px
+      line-height: 1.3
+
+    p
+      margin-bottom: 30px
+      @include font($textBlack, $regular, normal, 16px, 1.5)
+
+      &:last-child
+        margin-bottom: 100px
+
+  &__rules
+    margin-bottom: 50px
+    @include font($textBlack, $regular, normal, 30px, 1.5)
+
+.s_why
+  margin-bottom: 80px
+
+.why
+  display: flex
+
+  &_half
+    width: 50%
+
+    &:first-child
+      position: relative
+      display: flex
+
+    img
+      &:first-child
+        width: 100%
+        @include object-fit()
+        height: 100%
+
+      &:last-child
+        position: absolute
+        bottom: 0
+        right: 0
+
+    &:last-child
+      padding-left: 70px
+
+  &__title
+    @include font($textBlack, $regular, normal, 30px, 1.5)
+    margin: 0 0 40px
+
+  p
+    margin: 0 0 40px
+
+  &__list
+    margin-bottom: 50px
+    li
+      display: flex
+      margin-bottom: 20px
+      align-items: center
+
+      img.why__list__img
+        width: 60px
+        margin-right: 20px
+
+      p
+        max-width: 460px
+        margin: 0
+        @include font($textBlack, $regular, normal, 18px, 1.5)
+
+.s_news
+  margin-bottom: 80px
+
+.news
+  &__title
+    display: flex
+    margin-bottom: 80px
+
+    .innerTitle
+      white-space: nowrap
+      line-height: 1
+      margin: 10px 20px 0 0
+
+  &__border
+    width: 100%
+    text-align: right
+    border-bottom: 1px solid $lightGrey
+
+  &__items
+    display: flex
+    justify-content: space-between
+
+  &__item
+    width: 23%
+
+    img
+      width: 100%
+      height: 330px
+      @include object-fit()
+      margin-bottom: 30px
+
+    &__title
+      @include font($textBlack, $regular, normal, 30px, 1)
+
+    p
+      @include font($textBlack, $regular, normal, 18px, 1.5)
+
+.s_footer
+  .wrapper_fullHD
+    background: $grey
+
+.footer
+  display: flex
+  justify-content: space-between
+  padding: 60px 0
+
+  .header__logo_first
+    margin-bottom: 15px
+
+  .header__logo_second
+    margin-bottom: 30px
+
+  .header__logo
+    img
+      width: 70px
+
+    div
+      @include font($white, $regular, 400, 20px, 1.2)
+
+  &__copyright, &__developer, &__developer a
+    @include font($lightGrey, $regular, 400, 15px, 1.2)
+
+  &__title
+    @include font($white, $regular, 400, 15px, 1.2)
+    text-transform: uppercase
+    margin-bottom: 30px
+
+  &__menu
+    margin: 0
+    padding: 0
+    list-style: none
+
+    li
+      margin-bottom: 20px
+
+      a
+        display: inline-block
+        text-decoration: none
+        @include font($lightGrey, $regular, 400, 15px, 1.2)
+
+  &__subscribe
+    text-align: center
+    padding: 20px
+    background: #4A5258
+    width: 450px
+    @include box-sizing()
+
+    &__title
+      margin-bottom: 20px
+      @include font($white, $regular, 400, 18px, 1.2)
+
+    input
+      width: 100%
+      border: none
+
+      &:hover, &:focus, &:active
+        outline: none
+
+      &[type='email']
+        margin-bottom: 10px
+        @include box-sizing()
+        padding: 0 20px
+        @include font($textBlack, $regular, 400, 15px, 50px)
+
+  &__contacts
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    max-width: 310px
+
+    &__phone, &__address
+      @include font($white, $regular, normal, 24px, 1.1)
+
+    &__phone__title, .mapLink
+      margin-bottom: 10px
+      @include font($lightGrey, $regular, normal, 15px, 1.1)
+
+    .mapLink
+      margin-bottom: 30px
+
+    hrm
+      margin: 30px 0
+      border: none
+      height: 1px
+      background: $lightGrey
+      width: 100%
+
+    a
+      display: inline-block
+
+    .btn
+      padding: 0 20px
+
+@import "hamburger"
+
+/* RESPONSIVE */
+@import "responsive"
