@@ -1,4 +1,305 @@
-@import "variables"
-@import "prefixes"
+@media only screen and (max-width: 1600px)
+  .header
+    justify-content: center
 
-@media only screen and (max-width: 1200px)
+    &__adaptive
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      .header__login
+        height: 140px
+
+    .header__logo, .header__login
+      display: none
+
+  .footer
+    flex-wrap: wrap
+
+    &__column
+      margin-bottom: 30px
+      &:nth-child(1)
+        order: 4
+        margin-top: auto
+
+      &:nth-child(2)
+        order: 1
+        width: 25%
+
+      &:nth-child(3)
+        order: 2
+        width: 25%
+
+      &:nth-child(4)
+        order: 3
+        width: 45%
+
+      &:nth-child(5)
+        order: 5
+
+      &__logos
+        flex-direction: row
+
+    &__subscribe
+      margin-left: auto
+
+    &__menu
+      li
+        margin-bottom: 10px
+
+    &__title
+      margin-bottom: 15px
+
+@media only screen and (max-width: 1500px)
+  .tasks__org
+    &__items
+      flex-direction: column
+
+    &__item
+      width: 100%
+      margin: 0 0 20px
+
+@media only screen and (max-width: 1300px)
+  .btn
+    padding: 0 20px
+
+  .firstScreen
+    flex-wrap: wrap
+
+    &_left
+      width: 100%
+      order: 2
+
+    &_right
+      order: 1
+      width: 100%
+      display: flex
+      justify-content: space-around
+
+      &__item
+        &:first-child, &:last-child
+          margin: 30px 0
+          @include transform(none)
+
+    h1
+      padding-top: 20px
+      font-size: 40px
+      margin-bottom: 40px
+
+    p
+      margin-bottom: 40px
+
+  .friends
+    flex-wrap: wrap
+
+    &_half
+      width: 100%
+
+      &:first-child
+        order: 2
+
+      &:last-child
+        order: 1
+        padding-left: 0
+        padding-top: 50px
+
+    .innerTitle
+      margin-bottom: 30px
+
+    &__copyright, &__video
+      margin-bottom: 50px
+
+  .steps__item
+    &__name
+      font-size: 30px
+
+    &__date
+      font-size: 16px
+
+@media only screen and (max-width: 1000px)
+  .innerTitle
+    font-size: 30px
+    margin-bottom: 30px
+
+  .s_steps
+    margin-bottom: 50px
+
+  .steps
+    flex-wrap: wrap
+
+    &__item
+      width: 48%
+      margin-bottom: 10px
+
+  .s_tasks
+    margin-bottom: 50px
+
+  .tasks
+    flex-wrap: wrap
+
+    &_half
+      width: 100%
+
+      &:first-child
+        margin-bottom: 50px
+
+      &:last-child img
+        margin-bottom: 40px
+
+    &__org
+      &__title
+        margin-bottom: 30px
+
+      &__items
+        flex-direction: row
+
+      &__item
+        width: 49%
+
+    &_first
+      p
+        &:last-child
+          margin-bottom: 40px
+
+    &__rules
+      font-size: 24px
+
+  .why
+    flex-wrap: wrap
+
+    &_half
+      width: 100%
+
+      &:first-child
+        margin-bottom: 40px
+
+      &:last-child
+        padding-left: 0
+
+
+  .news
+    &__items
+      flex-wrap: wrap
+
+    &__item
+      width: 48%
+
+      &:first-child
+        margin-bottom: 50px
+
+  .footer__column__logos
+    flex-direction: column
+
+@media only screen and (max-width: 767px)
+  .friends
+    &__events
+      flex-direction: column
+
+    &__event
+      width: 100%
+
+      p
+        height: auto
+
+  .tasks__org
+    &__items
+      flex-direction: column
+
+    &__item
+      width: 100%
+
+  .footer
+    padding: 30px 0
+
+  .footer__column:nth-child(2)
+    order: 1
+    width: 48%
+
+  .footer__column:nth-child(3)
+    order: 2
+    width: 48%
+
+  .footer__column:nth-child(4)
+    order: 3
+    width: 100%
+
+  .footer__subscribe, .footer__contacts
+    margin: 0 auto
+
+  .footer__column:nth-child(1)
+    order: 5
+    width: 100%
+
+  .footer__column:nth-child(5)
+    order: 4
+    width: 100%
+
+@media only screen and (max-width: 640px)
+  .firstScreen
+    padding-bottom: 40px
+
+    &_right
+      flex-direction: column
+
+    h1
+      font-size: 24px
+
+    p
+      font-size: 18px
+
+
+  .firstScreen_right__item:last-child
+    margin-top: 0
+
+  .friends__rules__link
+    max-width: 100%
+    @include box-sizing()
+
+    a
+      font-size: 18px
+
+  .friends_half img
+    min-height: 400px
+
+  .steps__item
+    width: 100%
+
+  .tasks_top, .tasks__org__item
+    flex-direction: column
+    align-items: center
+    text-align: center
+
+    p
+      margin: 0
+
+    img
+      margin: 0 0 20px
+
+  .tasks_second
+    padding: 30px 15px
+
+  .why_half
+    display: flex
+    flex-direction: column
+
+    img:first-child
+      height: auto
+
+    img:last-child
+      @include object-fit(contain)
+      position: static
+
+  .s_news
+    margin-bottom: 40px
+
+  .news__title
+    flex-direction: column
+    margin-bottom: 30px
+
+    .innerTitle
+      white-space: normal
+      margin-bottom: 30px
+
+  .news__item
+    width: 100%
+    margin-bottom: 30px
